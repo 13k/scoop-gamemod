@@ -1,0 +1,28 @@
+{
+    "version": "8.14.0",
+    "description": "Community Mod editor/creator for REDengine games",
+    "homepage": "https://github.com/WolvenKit/WolvenKit",
+    "license": "GPL-3.0-only",
+    "depends": "dotnet-sdk",
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://github.com/WolvenKit/WolvenKit/releases/download/8.14.0/WolvenKit-8.14.0.zip",
+                "https://github.com/WolvenKit/WolvenKit/releases/download/8.14.0/WolvenKit.Console-8.14.0.zip"
+            ],
+            "hash": [
+                "7cfc56643ac231c07825aad1e9dff6bcb1cff50c5a5768b31b7642b3daee53e6",
+                "13f8ddbeaa4c5cd1fcb438584643abea72205c85eedc841f1bb0a4fb22aaa578"
+            ]
+        }
+    },
+    "bin": [["WolvenKit.CLI.exe", "wk"]],
+    "shortcuts": [["WolvenKit.exe", "WolvenKit"]],
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/WolvenKit/WolvenKit/releases/download/$version/WolvenKit-$version.zip",
+            "https://github.com/WolvenKit/WolvenKit/releases/download/$matchTag/WolvenKit.Console-$version.zip"
+        ]
+    }
+}
