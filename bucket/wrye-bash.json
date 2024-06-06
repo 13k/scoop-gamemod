@@ -1,0 +1,24 @@
+{
+    "version": "311",
+    "description": "A swiss army knife for modding Bethesda games",
+    "homepage": "https://github.com/wrye-bash/wrye-bash",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wrye-bash/wrye-bash/releases/download/v311/Wrye.Bash.311.-.Standalone.Executable.7z",
+            "hash": "cc4466f2356bb0af58047999b34ac98dc5d55a6b2d7b4485e64e191446269976"
+        }
+    },
+    "extract_dir": "Mopy",
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\bash.ini\")) {",
+        "  New-Item \"$dir\\bash.ini\"",
+        "}"
+    ],
+    "persist": "bash.ini",
+    "shortcuts": [["Wrye Bash.exe", "Wrye Bash"]],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/wrye-bash/wrye-bash/releases/download/v$version/Wrye.Bash.$version.-.Standalone.Executable.7z"
+    }
+}
