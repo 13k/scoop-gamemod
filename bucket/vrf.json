@@ -1,0 +1,28 @@
+{
+    "version": "10.0",
+    "description": "Valve's Source 2 resource file format (GUI)",
+    "homepage": "https://github.com/ValveResourceFormat/ValveResourceFormat",
+    "license": "MIT",
+    "depends": "dotnet-sdk",
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.0/Source2Viewer.exe",
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.0/Decompiler-windows-x64.zip"
+            ],
+            "hash": [
+                "78f38f082937ef6a647f4468252b95ba35d62ef9220011818c0b17ff43a584bf",
+                "fab93ecee66afd438b65ab25fd40517917760fc94513201e694d76a674211045"
+            ]
+        }
+    },
+    "bin": [["Source2Viewer.exe", "vrf"], ["Decompiler.exe", "vrfd"]],
+    "shortcuts": [["Source2Viewer.exe", "Valve Resource Format"]],
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/$version/Source2Viewer.exe",
+            "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/$version/Decompiler-windows-x64.zip"
+        ]
+    }
+}
