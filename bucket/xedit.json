@@ -1,0 +1,51 @@
+{
+    "version": "4.0.4",
+    "description": "xEdit is an advanced graphical module viewer/editor and conflict detector",
+    "homepage": "https://github.com/TES5Edit/TES5Edit",
+    "license": "MPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/TES5Edit/TES5Edit/releases/download/xedit-4.0.4/xEdit.4.0.4.7z",
+            "hash": "92481f53921ae58c9bea4eefa6e75869ce68215f3c78be22bd505db26f545ea0"
+        }
+    },
+    "pre_install": [
+        "Remove-Item \"$dir\\xDump.exe\"",
+        "Rename-Item \"$dir\\xDump64.exe\" \"$dir\\xDump.exe\"",
+        "Remove-Item \"$dir\\xFOEdit.exe\"",
+        "Rename-Item \"$dir\\xFOEdit64.exe\" \"$dir\\xFOEdit.exe\"",
+        "Remove-Item \"$dir\\xTESEdit.exe\"",
+        "Rename-Item \"$dir\\xTESEdit64.exe\" \"$dir\\xTESEdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\TES4Edit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\TES5Edit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\TES5VREdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\SSEEdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\EnderalEdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xTESEdit.exe\" -Path \"$dir\\EnderalSEEdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FNVEdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FO3Edit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FO4Edit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FO4VREdit.exe\"",
+        "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FO76Edit.exe\""
+    ],
+    "shortcuts": [
+        ["TES4Edit.exe", "TES4Edit"],
+        ["TES5Edit.exe", "TES5Edit"],
+        ["TES5VREdit.exe", "TES5VREdit"],
+        ["SSEEdit.exe", "SSEEdit"],
+        ["EnderalEdit.exe", "EnderalEdit"],
+        ["EnderalSEEdit.exe", "EnderalSEEdit"],
+        ["FNVEdit.exe", "FNVEdit"],
+        ["FO3Edit.exe", "FO3Edit"],
+        ["FO4Edit.exe", "FO4Edit"],
+        ["FO4VREdit.exe", "FO4VREdit"],
+        ["FO76Edit.exe", "FO76Edit"]
+    ],
+    "checkver": {
+        "github": "https://github.com/TES5Edit/TES5Edit",
+        "regex": "/releases/tag/xedit-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/TES5Edit/TES5Edit/releases/download/xedit-$version/xEdit.$version.7z"
+    }
+}
