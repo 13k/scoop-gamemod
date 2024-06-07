@@ -1,0 +1,37 @@
+{
+    "version": "5.0.4",
+    "description": "Root Builder is a plugin for Mod Organizer 2, allowing users to manage files in the base game directory through Mod Organizer.",
+    "homepage": "https://github.com/Kezyma/ModOrganizer-Plugins",
+    "license": "Unknown",
+    "depends": ["mo2"],
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.0.4.zip",
+            "hash": "050818ad7cc0051d306a4945e1a587dab6bf0a3d55251d8ea7936c23441df3b2"
+        }
+    },
+    "extract_dir": "rootbuilder",
+    "post_install": [
+        "$mo2 = appdir mo2",
+        "$pluginDir = \"$mo2\\current\\plugins\\rootbuilder\"",
+        "if (Test-Path \"$pluginDir\") {",
+        "  Remove-Item -Force \"$pluginDir\"",
+        "}",
+        "New-Item -Type Junction -Target \"$dir\" -Path \"$pluginDir\""
+    ],
+    "post_uninstall": [
+        "$mo2 = appdir mo2",
+        "$pluginDir = \"$mo2\\current\\plugins\\rootbuilder\"",
+        "if (Test-Path \"$pluginDir\") {",
+        "  Remove-Item -Force \"$pluginDir\"",
+        "}"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/Kezyma/ModOrganizer-Plugins/releases/tags/rootbuilder",
+        "jsonpath": "$.assets[-1].name",
+        "regex": "rootbuilder.([\\d.]+).zip"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.$version.zip"
+    }
+}
