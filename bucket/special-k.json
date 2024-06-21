@@ -1,35 +1,48 @@
 {
-    "version": "23.8.26",
+    "version": "23.9.10.5",
     "description": "The Swiss Army Knife of PC Gaming",
     "homepage": "https://special-k.info",
     "license": "GPL-3.0-only",
+    "url": "https://sk-data.special-k.info/repository/SpecialK_23.9.10.5.exe",
+    "hash": "ef1ec047af4623ada6682e4fc289c960bc9422a826ef7a034294238ddfdee5f4",
+    "innosetup": true,
     "architecture": {
+        "32bit": {
+            "pre_install": [
+                "Rename-Item -Path \"$dir\\SKIF,2.exe\" -NewName \"SKIF.exe\"",
+                "Remove-Item -Path \"$dir\\SKIF,1.exe\""
+            ]
+        },
         "64bit": {
-            "url": [
-                "https://github.com/SpecialKO/SpecialK/releases/download/SK_23_8_26/SpecialK.7z",
-                "https://github.com/SpecialKO/SpecialK/releases/download/SK_23_8_26/SKIF.exe"
-            ],
-            "hash": [
-                "2ed30960bb7a1c3a381744cf479215f409dd56b90903f6c3cefd9abd959d1bd8",
-                "7a5059d001dd0f0965cf032efbb5e5e831e91b336f86de2cc04964abe736fc5d"
+            "pre_install": [
+                "Rename-Item -Path \"$dir\\SKIF,1.exe\" -NewName \"SKIF.exe\"",
+                "Remove-Item -Path \"$dir\\SKIF,2.exe\""
             ]
         }
     },
-    "installer": {
-        "script": "New-Item -Type Directory -Path \"$dir\\Profiles\""
-    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\Profiles\")) {",
+        "  New-Item -Type Directory -Path \"$persist_dir\\Profiles\"",
+        "}"
+    ],
     "persist": ["Global", "Profiles"],
     "shortcuts": [["SKIF.exe", "Special K"]],
     "checkver": {
-        "url": "https://api.github.com/repos/SpecialKO/SpecialK/releases",
-        "jsonpath": "$.[0].tag_name",
-        "regex": "SK_(\\d+)_(\\d+)_(\\d+)",
-        "replace": "${1}.${2}.${3}"
+        "script": [
+            "$ProgressPreference = \"SilentlyContinue\"",
+            "$repoUrl = \"https://sk-data.special-k.info/repository.json\"",
+            "$resp = Invoke-WebRequest -Uri \"$repoUrl\" -ea Stop",
+            "$obj = ConvertFrom-Json $resp.Content -ea Stop",
+            "$version = $obj.Main.Versions |",
+            "    Where-Object { $_.Branches.Contains(\"Website\") } |",
+            "    Select-Object -First 1",
+            "if ($null -eq $version) { throw \"Could not find a version from ${repoUrl}\"; }",
+            "Write-Output \"$($version.Name):$($version.SHA256):$($version.Installer)\""
+        ],
+        "regex": "(?<version>.+?):(?<hash>.+?):(?<url>.+)"
     },
     "autoupdate": {
-        "url": [
-            "https://github.com/SpecialKO/SpecialK/releases/download/SK_$underscoreVersion/SpecialK.7z",
-            "https://github.com/SpecialKO/SpecialK/releases/download/SK_$underscoreVersion/SKIF.exe"
-        ]
+        "url": "$matchUrl",
+        "hash": "$matchHash"
     }
 }
