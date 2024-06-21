@@ -42,10 +42,11 @@
         ["FO76Edit.exe", "FO76Edit"]
     ],
     "checkver": {
-        "github": "https://github.com/TES5Edit/TES5Edit",
-        "regex": "/releases/tag/xedit-([\\d.]+)"
+        "url": "https://api.github.com/repos/TES5Edit/TES5Edit/releases",
+        "jsonpath": "$.[0].tag_name",
+        "regex": "(?<tag>xedit-(?<version>.+))"
     },
     "autoupdate": {
-        "url": "https://github.com/TES5Edit/TES5Edit/releases/download/xedit-$version/xEdit.$version.7z"
+        "url": "https://github.com/TES5Edit/TES5Edit/releases/download/$matchTag/xEdit.$version.7z"
     }
 }
