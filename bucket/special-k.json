@@ -1,10 +1,10 @@
 {
-    "version": "23.9.10.5",
+    "version": "24.6.20.1",
     "description": "The Swiss Army Knife of PC Gaming",
     "homepage": "https://special-k.info",
     "license": "GPL-3.0-only",
-    "url": "https://sk-data.special-k.info/repository/SpecialK_23.9.10.5.exe",
-    "hash": "ef1ec047af4623ada6682e4fc289c960bc9422a826ef7a034294238ddfdee5f4",
+    "url": "https://sk-data.special-k.info/repository/SpecialK_24.6.20.1.exe",
+    "hash": "c80533977ba3c63045c72a0c792598f292d64fa3f932c64078af80b32cafb66f",
     "innosetup": true,
     "architecture": {
         "32bit": {
@@ -25,8 +25,16 @@
         "  New-Item -Type Directory -Path \"$persist_dir\\Profiles\"",
         "}"
     ],
-    "persist": ["Global", "Profiles"],
-    "shortcuts": [["SKIF.exe", "Special K"]],
+    "persist": [
+        "Global",
+        "Profiles"
+    ],
+    "shortcuts": [
+        [
+            "SKIF.exe",
+            "Special K"
+        ]
+    ],
     "checkver": {
         "script": [
             "$ProgressPreference = \"SilentlyContinue\"",
