@@ -1,12 +1,12 @@
 {
-    "version": "4.0.4",
+    "version": "4.1.5f",
     "description": "xEdit is an advanced graphical module viewer/editor and conflict detector",
     "homepage": "https://github.com/TES5Edit/TES5Edit",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/TES5Edit/TES5Edit/releases/download/xedit-4.0.4/xEdit.4.0.4.7z",
-            "hash": "92481f53921ae58c9bea4eefa6e75869ce68215f3c78be22bd505db26f545ea0"
+            "url": "https://github.com/TES5Edit/TES5Edit/releases/download/xedit-4.1.5f/xEdit.4.1.5f.7z",
+            "hash": "54c014da621f83f06a64fd92ddb8e32ed3082d1c65f543dc1c4e432130dced08"
         }
     },
     "pre_install": [
@@ -29,17 +29,50 @@
         "New-Item -Type HardLink -Target \"$dir\\xFOEdit.exe\" -Path \"$dir\\FO76Edit.exe\""
     ],
     "shortcuts": [
-        ["TES4Edit.exe", "TES4Edit"],
-        ["TES5Edit.exe", "TES5Edit"],
-        ["TES5VREdit.exe", "TES5VREdit"],
-        ["SSEEdit.exe", "SSEEdit"],
-        ["EnderalEdit.exe", "EnderalEdit"],
-        ["EnderalSEEdit.exe", "EnderalSEEdit"],
-        ["FNVEdit.exe", "FNVEdit"],
-        ["FO3Edit.exe", "FO3Edit"],
-        ["FO4Edit.exe", "FO4Edit"],
-        ["FO4VREdit.exe", "FO4VREdit"],
-        ["FO76Edit.exe", "FO76Edit"]
+        [
+            "TES4Edit.exe",
+            "TES4Edit"
+        ],
+        [
+            "TES5Edit.exe",
+            "TES5Edit"
+        ],
+        [
+            "TES5VREdit.exe",
+            "TES5VREdit"
+        ],
+        [
+            "SSEEdit.exe",
+            "SSEEdit"
+        ],
+        [
+            "EnderalEdit.exe",
+            "EnderalEdit"
+        ],
+        [
+            "EnderalSEEdit.exe",
+            "EnderalSEEdit"
+        ],
+        [
+            "FNVEdit.exe",
+            "FNVEdit"
+        ],
+        [
+            "FO3Edit.exe",
+            "FO3Edit"
+        ],
+        [
+            "FO4Edit.exe",
+            "FO4Edit"
+        ],
+        [
+            "FO4VREdit.exe",
+            "FO4VREdit"
+        ],
+        [
+            "FO76Edit.exe",
+            "FO76Edit"
+        ]
     ],
     "checkver": {
         "url": "https://api.github.com/repos/TES5Edit/TES5Edit/releases",
