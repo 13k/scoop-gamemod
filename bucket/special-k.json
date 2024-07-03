@@ -4,7 +4,7 @@
     "homepage": "https://special-k.info",
     "license": "GPL-3.0-only",
     "url": "https://sk-data.special-k.info/repository/SpecialK_24.6.20.2.exe",
-    "hash": "cd247238e6043c35634deef1b9aef89959ff8e8e4aa35af2b36646385206fb03",
+    "hash": "a79d21625022ffe44354d300f4adac75446cf305302bbd8497e4374ba6351d76",
     "innosetup": true,
     "architecture": {
         "32bit": {
