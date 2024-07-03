@@ -1,0 +1,28 @@
+{
+    "version": "2.1.0",
+    "description": "Capture and analyze the high-level performance characteristics of graphics applications on Windows.",
+    "homepage": "https://github.com/GameTechDev/PresentMon",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/GameTechDev/PresentMon/releases/download/v2.1.0/PresentMon-v2.1.0.msi",
+            "hash": "82194deb9774906e1a635c424ed39c63685abdc4c4335f797b503b0cb1644865"
+        }
+    },
+    "extract_dir": "Intel\\PresentMon",
+    "pre_install": [
+        "if (!(is_admin)) { throw 'Admin privileges are required.' }"
+    ],
+    "post_install": [
+        ". \"$bucketsdir\\gamemod\\scripts\\presentmon-app\\install-services.ps1\""
+    ],
+    "pre_uninstall": [
+        "if (!(is_admin)) { throw 'Admin privileges are required.' }",
+        ". \"$bucketsdir\\gamemod\\scripts\\presentmon-app\\uninstall-services.ps1\""
+    ],
+    "shortcuts": [["PresentMonApplication\\PresentMon.exe", "PresentMon"]],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/GameTechDev/PresentMon/releases/download/v$version/PresentMon-v$version.msi"
+    }
+}
