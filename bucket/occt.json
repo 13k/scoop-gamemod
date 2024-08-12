@@ -6,7 +6,7 @@
     "architecture": {
         "64bit": {
             "url": "https://ocbase.com/download/per/stable/OCCT12.1.10.exe#/OCCT.exe",
-            "hash": "d332e9194596fff867085cb08f13d6e59d5c9b9eeebb91e1432cf526c8e66824"
+            "hash": "b85a8293861aff2c110dd5a1ba726c83b21fa51af642acacb9e7ff24c37e75f2"
         }
     },
     "pre_install": [
@@ -15,5 +15,10 @@
         "}"
     ],
     "persist": "OCCT.config.json",
-    "shortcuts": [["OCCT.exe", "OCCT"]]
+    "shortcuts": [
+        [
+            "OCCT.exe",
+            "OCCT"
+        ]
+    ]
 }
