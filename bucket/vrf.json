@@ -1,5 +1,5 @@
 {
-    "version": "10.1",
+    "version": "10.2",
     "description": "Valve's Source 2 resource file format (GUI)",
     "homepage": "https://github.com/ValveResourceFormat/ValveResourceFormat",
     "license": "MIT",
@@ -7,12 +7,12 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.1/Source2Viewer.exe",
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.1/Decompiler-windows-x64.zip"
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.2/Source2Viewer.exe",
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.2/Decompiler-windows-x64.zip"
             ],
             "hash": [
-                "5c281602974d377ecd1637c3d511ce0509ff950448f166ef3fff13f3e29d48db",
-                "0dc07e4ce1cffef0e10e24ab24c773a7e8a406ce0d36644121818c56bfa556a9"
+                "2df456c6e370bcc92d88e9e95c5ff31a1c49048c7abcff81e6638997107d99ff",
+                "ce9eb7e6d5893adefbf58facd02dfce1ec190be450eae5afe0c8e4eabe4a009c"
             ]
         }
     },
