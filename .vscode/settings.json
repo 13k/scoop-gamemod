@@ -1,8 +1,8 @@
-// Configure PSScriptAnalyzer settings
 {
     "[powershell]": {
         "editor.formatOnSave": true
     },
+    // Configure PSScriptAnalyzer settings
     "powershell.scriptAnalysis.settingsPath": "PSScriptAnalyzerSettings.psd1",
     "powershell.codeFormatting.preset": "OTBS",
     "powershell.codeFormatting.alignPropertyValuePairs": true,
@@ -10,9 +10,7 @@
     "json.schemas": [
         {
             "url": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-            "fileMatch": [
-                "bucket/**/*.json"
-            ]
+            "fileMatch": ["bucket/**/*.json"]
         }
     ],
     "files.exclude": {
@@ -20,7 +18,6 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/tmp": true
+        "**/.DS_Store": true
     }
 }
