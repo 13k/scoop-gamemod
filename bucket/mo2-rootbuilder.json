@@ -1,13 +1,13 @@
 {
-    "version": "5.0.4",
+    "version": "5.0.5",
     "description": "Root Builder is a plugin for Mod Organizer 2, allowing users to manage files in the base game directory through Mod Organizer.",
     "homepage": "https://github.com/Kezyma/ModOrganizer-Plugins",
     "license": "Unknown",
     "depends": ["mo2"],
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.0.4.zip",
-            "hash": "050818ad7cc0051d306a4945e1a587dab6bf0a3d55251d8ea7936c23441df3b2"
+            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.0.5.zip",
+            "hash": "d062184571ec09f445cc995e72d42731e9342205472f6488cdd745f965285a52"
         }
     },
     "extract_dir": "rootbuilder",
@@ -27,11 +27,21 @@
         "}"
     ],
     "checkver": {
-        "url": "https://api.github.com/repos/Kezyma/ModOrganizer-Plugins/releases/tags/rootbuilder",
-        "jsonpath": "$.assets[2].name",
-        "regex": "rootbuilder.([\\d.]+).zip"
+        "script": [
+            "$ProgressPreference = \"SilentlyContinue\"",
+            "$url = \"https://api.github.com/repos/Kezyma/ModOrganizer-Plugins/releases/tags/rootbuilder\"",
+            "$resp = Invoke-WebRequest -Uri \"$url\" -ea Stop",
+            "$obj = ConvertFrom-Json $resp.Content -ea Stop",
+            "$asset = $obj.Assets |",
+            "    Where-Object { $_.name -match 'rootbuilder.([\\d.]+).zip' } |",
+            "    ForEach-Object { @{version = $matches[1]; url = $_.browser_download_url } } |",
+            "    Select-Object -Last 1",
+            "if ($null -eq $asset) { throw \"Could not find a suitable asset from ${url}\" }",
+            "Write-Output \"$($asset.version)|$($asset.url)\""
+        ],
+        "regex": "(?<version>.+?)\\|(?<url>.+)"
     },
     "autoupdate": {
-        "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.$version.zip"
+        "url": "$matchUrl"
     }
 }
