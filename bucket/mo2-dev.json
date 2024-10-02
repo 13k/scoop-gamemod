@@ -1,0 +1,13 @@
+{
+    "version": "2.5.3-dev1",
+    "description": "Mod manager for various PC games",
+    "homepage": "https://github.com/ModOrganizer2/modorganizer",
+    "license": "GPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://z0frog.sn.files.1drv.com/y4mdyyfhD8yEhTH_j3MSfeq-YF6hs8GtEtj9nEnq2rNZAMhdQk-4qPo_5cQOYZssCVUdZ_vxT7INra02052vAWf9rmS7Dg9tfUfFnBYGlgtadRje7bMb2R7FpYQjwOjYrhh41pL6wIrMhVlhuz_xDhRjnyUQZMnz2R-dandivRToznIcw6HIpWxungYydmpSGHdwSseX6XnzAkXSMzg__0qyA#/Mod.Organizer-2.5.3dev1.7z",
+            "hash": "A10AD81772608EAA0426FDD8471DB884C7EB12B2274A3E3D8CE4663337B5B369"
+        }
+    },
+    "shortcuts": [["ModOrganizer.exe", "ModOrganizer (dev)"]]
+}
