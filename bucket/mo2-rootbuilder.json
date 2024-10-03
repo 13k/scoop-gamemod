@@ -1,13 +1,13 @@
 {
-    "version": "5.0.5",
+    "version": "24.9.26",
     "description": "Root Builder is a plugin for Mod Organizer 2, allowing users to manage files in the base game directory through Mod Organizer.",
     "homepage": "https://github.com/Kezyma/ModOrganizer-Plugins",
     "license": "Unknown",
-    "depends": ["mo2"],
+    "depends": "mo2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.0.5.zip",
-            "hash": "d062184571ec09f445cc995e72d42731e9342205472f6488cdd745f965285a52"
+            "url": "https://sk-data.special-k.info/repository/SpecialK_24.9.26.exe",
+            "hash": "27b4586967cf3c70ed9e57be9a94660d69aa8d5a60f1adc821938db9e883e33e"
         }
     },
     "extract_dir": "rootbuilder",
@@ -20,9 +20,7 @@
         "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\post_uninstall.ps1\" \"mo2-dev\""
     ],
     "checkver": {
-        "script": [
-            "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\checkver.ps1\""
-        ],
+        "script": "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\checkver.ps1\"",
         "regex": "(?<version>.+?)\\|(?<url>.+)"
     },
     "autoupdate": {
