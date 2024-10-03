@@ -1,8 +1,11 @@
 # Gamemod apps bucket for Scoop
 
-[![Tests](https://github.com/13k/scoop-gamemod/actions/workflows/ci.yml/badge.svg)](https://github.com/13k/scoop-gamemod/actions/workflows/ci.yml) [![Excavator](https://github.com/13k/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/13k/<bucketname>/actions/workflows/excavator.yml)
+[![Tests](https://github.com/13k/scoop-gamemod/actions/workflows/ci.yml/badge.svg)](https://github.com/13k/scoop-gamemod/actions/workflows/ci.yml)
+[![Excavator](https://github.com/13k/scoop-gamemod/actions/workflows/excavator.yml/badge.svg)](https://github.com/13k/scoop-gamemod/actions/workflows/excavator.yml)
 
 ## How do I install these manifests?
+
+**NOTE**: The bucket **MUST** be named `gamemod`.
 
 ```pwsh
 scoop bucket add gamemod "https://github.com/13k/scoop-gamemod"
