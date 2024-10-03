@@ -21,11 +21,11 @@ try {
 $query_str = $res.Headers.Location.Query
 $query = [System.Web.HttpUtility]::ParseQueryString($query_str)
 # "371272C49A37CC4A!152686"
-$resource_id = $query["resid"] 
+$resource_id = $query["resid"]
 # "!AAR6vwL0egRhdw4"
-$auth_key = $query["authkey"] 
+$auth_key = $query["authkey"]
 # "fRTPM5"
-$e = $query["e"] 
+$e = $query["e"]
 
 if (-not ($resource_id -match "^(?<drive_id>.+)!.+$")) {
   throw "could not extract drive_id from resource_id: '${resource_id}'"
@@ -44,7 +44,7 @@ drive_id = '${drive_id}'
 
 $api_uri = New-Object System.UriBuilder("https", "api.onedrive.com")
 $api_uri.Path = "/v1.0/drives/${drive_id}/items/${resource_id}"
-$api_uri.Query = "?authKey=${auth_key}" 
+$api_uri.Query = "?authKey=${auth_key}"
 $api_uri.Query += "&`$select=*,sharepointIds,webDavUrl,containingDrivePolicyScenarioViewpoint"
 $api_uri.Query += "&`$expand=thumbnails"
 $api_uri.Query += "&ump=1"
