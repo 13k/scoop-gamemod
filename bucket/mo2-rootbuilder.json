@@ -12,32 +12,16 @@
     },
     "extract_dir": "rootbuilder",
     "post_install": [
-        "$mo2 = appdir mo2",
-        "$pluginDir = \"$mo2\\current\\plugins\\rootbuilder\"",
-        "if (Test-Path \"$pluginDir\") {",
-        "  Remove-Item -Force \"$pluginDir\"",
-        "}",
-        "New-Item -Type Junction -Target \"$dir\" -Path \"$pluginDir\""
+        "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\post_install.ps1\" \"mo2\"",
+        "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\post_install.ps1\" \"mo2-dev\""
     ],
     "post_uninstall": [
-        "$mo2 = appdir mo2",
-        "$pluginDir = \"$mo2\\current\\plugins\\rootbuilder\"",
-        "if (Test-Path \"$pluginDir\") {",
-        "  Remove-Item -Force \"$pluginDir\"",
-        "}"
+        "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\post_uninstall.ps1\" \"mo2\"",
+        "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\post_uninstall.ps1\" \"mo2-dev\""
     ],
     "checkver": {
         "script": [
-            "$ProgressPreference = \"SilentlyContinue\"",
-            "$url = \"https://api.github.com/repos/Kezyma/ModOrganizer-Plugins/releases/tags/rootbuilder\"",
-            "$resp = Invoke-WebRequest -Uri \"$url\" -ea Stop",
-            "$obj = ConvertFrom-Json $resp.Content -ea Stop",
-            "$asset = $obj.Assets |",
-            "    Where-Object { $_.name -match 'rootbuilder.([\\d.]+).zip' } |",
-            "    ForEach-Object { @{version = $matches[1]; url = $_.browser_download_url } } |",
-            "    Select-Object -Last 1",
-            "if ($null -eq $asset) { throw \"Could not find a suitable asset from ${url}\" }",
-            "Write-Output \"$($asset.version)|$($asset.url)\""
+            "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\checkver.ps1\"",
         ],
         "regex": "(?<version>.+?)\\|(?<url>.+)"
     },
