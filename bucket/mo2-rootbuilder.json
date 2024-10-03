@@ -21,7 +21,7 @@
     ],
     "checkver": {
         "script": [
-            "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\checkver.ps1\"",
+            "& \"${bucketsdir}\\gamemod\\scripts\\mo2-rootbuilder\\checkver.ps1\""
         ],
         "regex": "(?<version>.+?)\\|(?<url>.+)"
     },
