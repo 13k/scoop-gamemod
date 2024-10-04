@@ -5,8 +5,6 @@
 
 ## How do I install these manifests?
 
-**NOTE**: The bucket **MUST** be named `gamemod`.
-
 ```pwsh
 scoop bucket add gamemod "https://github.com/13k/scoop-gamemod"
 scoop install "gamemod/<app_name>" # replace <app_name> with application name
