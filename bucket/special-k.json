@@ -1,10 +1,10 @@
 {
-    "version": "24.10.24",
+    "version": "24.10.25.2",
     "description": "The Swiss Army Knife of PC Gaming",
     "homepage": "https://special-k.info",
     "license": "GPL-3.0-only",
-    "url": "https://sk-data.special-k.info/repository/SpecialK_24.10.24.exe",
-    "hash": "85246cd0957094fb25c0703d159e823237aa463f3a5f5957eae631d5d11fe836",
+    "url": "https://sk-data.special-k.info/repository/SpecialK_24.10.25.2.exe",
+    "hash": "73e19c51278211b3ed2aa2d23f4957deb5ce4f5f7fbbabb3c469812c87422f84",
     "innosetup": true,
     "architecture": {
         "32bit": {
