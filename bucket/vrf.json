@@ -1,42 +1,38 @@
 {
-    "version": "10.2",
-    "description": "Valve's Source 2 resource file format (GUI)",
+    "version": "14.1",
+    "description": "Valve's Source 2 resource file format",
     "homepage": "https://github.com/ValveResourceFormat/ValveResourceFormat",
     "license": "MIT",
     "depends": "dotnet-sdk",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.2/Source2Viewer.exe",
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/10.2/Decompiler-windows-x64.zip"
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/14.1/Source2Viewer.exe",
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/14.1/cli-windows-x64.zip"
             ],
             "hash": [
-                "2df456c6e370bcc92d88e9e95c5ff31a1c49048c7abcff81e6638997107d99ff",
-                "ce9eb7e6d5893adefbf58facd02dfce1ec190be450eae5afe0c8e4eabe4a009c"
+                "ba7a666813089e839d2d559f2ff7c9d3dbee403a5a0dfd8a53524e38d7532115",
+                "4d8087dfa3009b858fc5d82d9ebaeb0276252fcc824539ddb9961a740b597daf"
             ]
         }
     },
     "bin": [
         [
-            "Source2Viewer.exe",
+            "Source2Viewer-CLI.exe",
             "vrf"
-        ],
-        [
-            "Decompiler.exe",
-            "vrfd"
         ]
     ],
     "shortcuts": [
         [
             "Source2Viewer.exe",
-            "Valve Resource Format"
+            "Source 2 Viewer"
         ]
     ],
     "checkver": "github",
     "autoupdate": {
         "url": [
             "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/$version/Source2Viewer.exe",
-            "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/$version/Decompiler-windows-x64.zip"
+            "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/$version/cli-windows-x64.zip"
         ]
     }
 }
