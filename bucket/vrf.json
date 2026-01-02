@@ -1,5 +1,5 @@
 {
-    "version": "16.0",
+    "version": "17.0",
     "description": "Valve's Source 2 resource file format",
     "homepage": "https://github.com/ValveResourceFormat/ValveResourceFormat",
     "license": "MIT",
@@ -7,12 +7,12 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/16.0/Source2Viewer.exe",
-                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/16.0/cli-windows-x64.zip"
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/17.0/Source2Viewer.exe",
+                "https://github.com/ValveResourceFormat/ValveResourceFormat/releases/download/17.0/cli-windows-x64.zip"
             ],
             "hash": [
-                "80cee9a572feec30d3b5aacd415254b4046285372eadf2f8d08e7168f7f5e280",
-                "2f7105f268935624e843a543c03a0b461ca2aeb39aa237a7978064af65d56d60"
+                "d48ab98cc2e4b5ab568710782406bb77bb6fec19a006542fc1a255a5b758bfb7",
+                "039ca40d7e80c49a3e26b0a20fab10abdb929456def283461a8d89040429bd8b"
             ]
         }
     },
