@@ -1,5 +1,5 @@
 {
-    "version": "5.1.0",
+    "version": "5.1.1",
     "description": "Root Builder is a plugin for Mod Organizer 2, allowing users to manage files in the base game directory through Mod Organizer.",
     "homepage": "https://github.com/Kezyma/ModOrganizer-Plugins",
     "license": "Unknown",
@@ -9,8 +9,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.1.0.zip",
-            "hash": "1a5273c4c3da9cab5d7d2b144d119f093120a26c1f09896dd0654e376fc389e4"
+            "url": "https://github.com/Kezyma/ModOrganizer-Plugins/releases/download/rootbuilder/rootbuilder.5.1.1.zip",
+            "hash": "902f1edf7ccae8fa625d4ea50b8fd36a0540cda121ad584989e4b1ed977046b1"
         }
     },
     "extract_dir": "rootbuilder",
